@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/21 11:01:36 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/22 07:58:13 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,6 +20,8 @@ LIBFT = libft_42/libft.a
 SRCS = src/push_swap.c	\
 		src/parse.c	\
 		src/check_array.c	\
+		src/errors.c	\
+		src/utils.c	\
 
 OBJS = $(SRCS:.c=.o)
 

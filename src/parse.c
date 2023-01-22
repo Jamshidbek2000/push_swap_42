@@ -6,26 +6,11 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 08:15:21 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/21 11:25:53 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/22 07:49:05 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap.h"
-
-int	ft_is_all_digits(char *str)
-{
-	int	index;
-
-	index = 0;
-	while (str[index] != '\0')
-	{
-		if (ft_isdigit(str[index]) == 0 && ft_is_space_char(str[index]) == 0
-			&& str[index] != '-' && str[index] != '+')
-			return (0);
-		index++;
-	}
-	return (1);
-}
 
 int	get_nb_of_ints_in_1_argv(char *input)
 {
@@ -38,7 +23,7 @@ int	get_nb_of_ints_in_1_argv(char *input)
 	index = 0;
 	while (split_num[index] != NULL)
 		index++;
-	free(split_num);
+	ft_free_2d_array((void **)split_num);
 	return (index);
 }
 
@@ -73,7 +58,7 @@ int	fill_array(long *array, char *str, int start_index)
 		array[start_index + index] = ft_atol(str_array[index]);
 		index++;
 	}
-	free(str_array);
+	ft_free_2d_array((void **)str_array);
 	return index;
 }
 

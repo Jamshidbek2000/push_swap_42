@@ -6,27 +6,35 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:39:05 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/21 11:50:12 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:11:48 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap.h"
 
-void	exit_with_msg(int error_index)
-{
-	ft_putstr_fd("Error\n", 1);	
-	exit(error_index);
-}
-
-void	arg_check(int argc)
+void	argc_check(int argc)
 {
 	if (argc < 2)
 		exit(0);
 }
 
-void	array_is_ordered(long *array, int size)
+int	array_is_sorted(long *array, int size)
 {
-	
+	int	index;
+	int	previous;
+
+	index = 0;
+	previous = array[index++];
+	while (index < size)
+	{
+		if (previous > array[index])
+		{
+			printf("NOT SORTED");
+			return (0);
+		}
+		index++;
+	}
+	return (1);
 }
 
 void	range_check(long *array, int size)
@@ -66,4 +74,12 @@ void	duplicate_check(long *array, int size)
 		}
 		i++;
 	}
+}
+
+void	array_check(long *array, int size)
+{
+	duplicate_check(array, size);
+	range_check(array, size);
+	array_is_sorted(array, size);
+	printf("\nTRUE INPUT\n");
 }
