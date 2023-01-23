@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/22 07:58:13 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/23 08:04:27 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -21,7 +21,10 @@ SRCS = src/push_swap.c	\
 		src/parse.c	\
 		src/check_array.c	\
 		src/errors.c	\
+		src/init_stack.c	\
+		src/node.c	\
 		src/utils.c	\
+		src/sort_array.c	\
 
 OBJS = $(SRCS:.c=.o)
 
