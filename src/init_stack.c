@@ -6,11 +6,24 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 14:24:41 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 08:03:44 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/23 08:24:28 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap.h"
+
+t_stack	*get_empty_stack()
+{
+	t_stack	*stack;
+
+	stack = malloc(sizeof(*stack));
+	if (stack == NULL)
+		return (NULL);
+	stack->head = NULL;
+	stack->size = 0;
+	stack->tail = NULL;
+	return (stack);
+}
 
 t_stack	*array_to_stack(long *array, int size)
 {
@@ -18,7 +31,7 @@ t_stack	*array_to_stack(long *array, int size)
 	int		index;
 	t_node	*tmp;
 
-	stack_a = malloc(sizeof(*stack_a));
+	stack_a = get_empty_stack();
 	if (stack_a == NULL)
 		return (NULL);
 	index = 0;

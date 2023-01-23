@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 07:40:18 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 07:38:37 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/23 11:22:42 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ void	print_nodes(t_node *head, int include_ind)
 {
 	t_node	*curr;
 
-	ft_printf("STACK: ");
 	if (head == NULL)
 		return ;
 	curr = head;

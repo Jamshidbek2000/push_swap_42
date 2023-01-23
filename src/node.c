@@ -6,26 +6,11 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:18:27 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/22 15:09:07 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/23 08:44:14 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap.h"
-
-void	free_stack(t_stack *stack)
-{
-	t_node *current;
-	t_node *next;
-
-	current = stack->head;
-	while (current != NULL)
-	{
-		next = current->next;
-		free(current);
-		current = next;
-	}
-	free(stack);
-}
 
 t_node	*get_new_node(int num, int index_sorted)
 {
