@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:13:53 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 14:03:21 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:24:06 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	main(int argc, char **argv)
 	stack_a = get_stack_a(array, size);
 	stack_b = get_empty_stack();
 
-
+	
 
 	free(array);
 	free_stack(stack_a);
@@ -37,6 +37,33 @@ int	main(int argc, char **argv)
 }
 
 
+	// { // check sort_for_7	
+	// print_stack(stack_a, 1);
+	// sort_for_7(stack_a, stack_b);
+	// print_stack(stack_a, 1);
+	// print_stack(stack_b, 1);
+	// }
+
+
+	// { // test count rotations to top/down
+	// print_stack(stack_a, 1);
+	// ft_printf("DOWN: %d\n", count_rotations_to_down(stack_a, get_min_node(stack_a)));
+	// ft_printf("TOP: %d\n", count_rotations_to_top(stack_a, get_min_node(stack_a)));
+	// }
+
+	// { // check sort_3	
+	// print_stack(stack_a, 1);
+	// sort_for_3(stack_a, "a\n");
+	// print_stack(stack_a, 1);
+	// }
+
+	// print_stack(stack_a, 1);
+	// {// rotation count check
+	// ft_printf("ROTATIONS TO TOP: %d\n", count_rotations_to_top(stack_a, stack_a->head->next->next));
+	// ft_printf("ROTATIONS TO TOP: %d\n", count_rotations_to_down(stack_a, stack_a->head->next->next));
+	// }
+
+	
 	// { // reverse_rotate check
 	// 	print_stack(stack_a, 1);
 	// 	reverse_rotate_stack(stack_a);

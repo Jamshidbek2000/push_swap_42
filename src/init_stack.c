@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 14:24:41 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 08:24:28 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:20:30 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ t_stack	*get_stack_a(long *array, int size)
 
 	stack_a = array_to_stack(array, size);
 	bubble_sort_array(array, size);
-	print_array(array, size);
+	// print_array(array, size);
 	set_stack_indeces(stack_a, array);
 	
 	return (stack_a);

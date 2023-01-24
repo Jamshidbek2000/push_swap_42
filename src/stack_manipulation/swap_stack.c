@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:51:39 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 13:50:18 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:22:44 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 // Assign first node to the second node's next pointer
 // Assign temp to the first node's next pointer
 // Assign temp to the head of the stack
-void	swap_stack(t_stack *stack)
+void	swap_stack(t_stack *stack, char *msg)
 {
 	t_node	*tmp;
 
@@ -28,4 +28,6 @@ void	swap_stack(t_stack *stack)
 	stack->head = tmp;
 	if (stack->size == 2)
 		stack->tail = stack->head->next;
+	ft_printf("s");
+	ft_printf(msg);
 }

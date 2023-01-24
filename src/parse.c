@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 08:15:21 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/22 07:49:05 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 08:55:12 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ int	fill_array(long *array, char *str, int start_index)
 	while (str_array[index] != NULL)
 	{
 		array[start_index + index] = ft_atol(str_array[index]);
+		// ft_printf("%d ", array[start_index + index]);
 		index++;
 	}
 	ft_free_2d_array((void **)str_array);
@@ -79,6 +80,7 @@ long	*get_long_arr_from_input(int argc, char **argv)
 	{
 		array_index += fill_array(array, argv[argv_index], array_index);
 		argv_index++;
-	}	
+	}
+	// print_array(array, array_size);
 	return (array);
 }

@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/23 13:57:53 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/24 07:59:04 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,6 +25,8 @@ SRCS = src/push_swap.c	\
 		src/node.c	\
 		src/utils.c	\
 		src/sort_array.c	\
+		src/sort.c	\
+		src/sort_utils.c	\
 		src/stack_manipulation/push_stack.c	\
 		src/stack_manipulation/free_stack.c	\
 		src/stack_manipulation/swap_stack.c	\

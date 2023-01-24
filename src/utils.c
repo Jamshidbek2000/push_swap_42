@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 07:40:18 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 11:22:42 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:39:43 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,13 @@ void	print_node_index(t_node *node)
 	if (node == NULL)
 		return ;
 	ft_printf("-[%d]", node->index_sorted);
+}
+
+void	print_node(t_node *node)
+{
+	if (node == NULL)
+		return ;
+	ft_printf(" %d-[%d]", node->num, node->index_sorted);
 }
 
 //if incl_ind == 0 it will print only number

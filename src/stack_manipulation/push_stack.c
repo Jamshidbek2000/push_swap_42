@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 08:38:00 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 14:01:38 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 10:51:34 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ void	push_tail(t_stack *stack, t_node *node)
 	}
 }
 
-void	push_to_from(t_stack *stack_1, t_stack *stack_2)
+void	push_to_from(t_stack *stack_1, t_stack *stack_2, char *msg)
 {
 	t_node	*node;
 
@@ -60,4 +60,6 @@ void	push_to_from(t_stack *stack_1, t_stack *stack_2)
 	if (node == NULL)
 		return ;
 	push_head(stack_1, node);
+	ft_printf("p");
+	ft_printf(msg);
 }

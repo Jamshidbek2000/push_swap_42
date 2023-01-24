@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 08:03:28 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 14:01:06 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/24 11:09:21 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,9 @@ t_node	*move_head_to_tail(t_node *head);
 int		get_list_size(t_node *head);
 
 // utils.c
+void	print_node(t_node *node);
 void	print_nodes(t_node *head, int include_ind);
+void	print_node_index(t_node *node);
 void	print_array(long *array, int size);
 
 // init_stack.c
@@ -78,6 +80,18 @@ t_stack	*get_stack_a(long *array, int size);
 int		get_index(long *arr, int size, int num);
 void	bubble_sort_array(long *array, int size);
 
+// sort.c
+void	sort(t_stack *stack_a, t_stack *stack_b);
+void	sort_for_2(t_stack *stack, char *msg);
+void 	sort_for_3(t_stack *stack, char *msg);
+void	sort_for_7(t_stack *stack_a, t_stack *stack_b);
+
+
+// sort_utils.c
+int		is_sorted(t_stack *stack);
+int		get_min_index(t_stack *stack);
+int		count_rotations_to_top(t_stack *stack, t_node *node);
+int		count_rotations_to_down(t_stack *stack, t_node *node);
 
 
 
@@ -92,15 +106,21 @@ t_node	*pop_last(t_stack *stack);
 void	print_stack(t_stack *stack, int incl_index);
 
 // push_stack.c
-void	push_to_from(t_stack *stack_1, t_stack *stack_2);
+void	push_to_from(t_stack *stack_1, t_stack *stack_2, char *msg);
 void	push_head(t_stack *stack, t_node *node);
 void	push_tail(t_stack *stack, t_node *node);
 
 // rotate_stack.c
-void	rotate_stack(t_stack *stack);
-void	reverse_rotate_stack(t_stack *stack);
+void	rotate_stack(t_stack *stack, char *msg);
+void	reverse_rotate_stack(t_stack *stack, char *msg);
+
 
 // swap_stack.c
-void	swap_stack(t_stack *stack);
+void	swap_stack(t_stack *stack, char *msg);
+
+
+
+t_node	*get_min_node(t_stack *stack);
+
 
 #endif
