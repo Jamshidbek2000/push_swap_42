@@ -6,11 +6,12 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/24 07:59:04 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/25 11:21:26 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = push_swap
+BONUS_NAME = checker
 CC = cc
 RM = rm -rf
 CFLAGS = 
@@ -34,8 +35,23 @@ SRCS = src/push_swap.c	\
 		src/stack_manipulation/print_stack.c	\
 		src/stack_manipulation/pop_stack.c	\
 		
+BONUS_SRCS = bonus_src/push_swap_checker.c	\
+		bonus_src/check_array.c	\
+		bonus_src/errors.c	\
+		bonus_src/init_stack.c	\
+		bonus_src/node.c	\
+		bonus_src/parse.c	\
+		bonus_src/sort_array.c	\
+		bonus_src/sort_utils.c	\
+		bonus_src/stack_manipulation/push_stack.c	\
+		bonus_src/stack_manipulation/free_stack.c	\
+		bonus_src/stack_manipulation/swap_stack.c	\
+		bonus_src/stack_manipulation/rotate_stack.c	\
+		bonus_src/stack_manipulation/pop_stack.c	\
 
 OBJS = $(SRCS:.c=.o)
+
+BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 all: $(NAME)
 
@@ -49,14 +65,17 @@ $(LIBFT):
 	git submodule update --init --recursive --remote
 	make -C ./libft_42
 
-bonus: $(NAME_BONUS)
+bonus: $(BONUS_NAME)
+
+$(BONUS_NAME): $(LIBFT) $(BONUS_OBJS)
+	@$(CC) $(CFLAGS) -o $(BONUS_NAME) $(BONUS_OBJS) $(LIBFT)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJS) $(BONUS_OBJS)
 	make clean -C ./libft_42
 
 fclean:
-	$(RM) $(OBJS) $(NAME) $(NAME_BONUS)
+	$(RM) $(OBJS) $(NAME) $(BONUS_OBJS) $(BONUS_NAME)
 	make fclean -C ./libft_42
 
 re: fclean all

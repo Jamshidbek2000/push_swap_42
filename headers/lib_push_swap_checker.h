@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   lib_push_swap.h                                    :+:      :+:    :+:   */
+/*   lib_push_swap_checker.h                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/21 08:03:28 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:12:37 by jergashe         ###   ########.fr       */
+/*   Created: 2023/01/25 08:54:44 by jergashe          #+#    #+#             */
+/*   Updated: 2023/01/25 10:45:40 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef LIB_PUSH_SWAP_H
-# define LIB_PUSH_SWAP_H
+#ifndef LIB_PUSH_SWAP_CHECKER_H
+# define LIB_PUSH_SWAP_CHECKER_H
 
 # include <stdio.h>
 # include <limits.h>
@@ -36,6 +36,7 @@ typedef struct s_stack
 	t_node	*tail;
 	int		size;
 }t_stack;
+
 
 // push_swap.c
 
@@ -63,14 +64,6 @@ void	bubble_sort_array(long *array, int size);
 
 // sort_utils.c
 int		is_sorted(t_stack *stack);
-int		get_min_index(t_stack *stack);
-int		count_rotations_to_top(t_stack *stack, t_node *node);
-int		count_rotations_to_down(t_stack *stack, t_node *node);
-
-// sort.c
-void	sort(t_stack *stack_a, t_stack *stack_b);
-
-// utils.c
 
 
 
@@ -85,15 +78,19 @@ t_node	*pop_last(t_stack *stack);
 // void	print_stack(t_stack *stack, int incl_index);
 
 // push_stack.c
-void	push_to_from(t_stack *stack_1, t_stack *stack_2, char *msg);
+void	push_to_from(t_stack *stack_1, t_stack *stack_2);
 void	push_head(t_stack *stack, t_node *node);
 void	push_tail(t_stack *stack, t_node *node);
 
 // rotate_stack.c
-void	rotate_stack(t_stack *stack, char *msg);
-void	reverse_rotate_stack(t_stack *stack, char *msg);
+void	rotate_stack(t_stack *stack);
+void	reverse_rotate_stack(t_stack *stack);
+void	rotate_2_stacks(t_stack *stack_a, t_stack *stack_b);
+void	reverse_rotate_2_stacks(t_stack *stack_a, t_stack *stack_b);
 
 // swap_stack.c
-void	swap_stack(t_stack *stack, char *msg);
+void	swap_stack(t_stack *stack);
+void	swap_2_stacks(t_stack *stack_a, t_stack *stack_b);
+
 
 #endif

@@ -6,11 +6,11 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 14:24:41 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 09:45:33 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 10:05:04 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../headers/lib_push_swap.h"
+#include "../headers/lib_push_swap_checker.h"
 
 t_stack	*get_empty_stack()
 {

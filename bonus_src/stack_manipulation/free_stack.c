@@ -1,23 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   print_stack.c                                      :+:      :+:    :+:   */
+/*   free_stack.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/23 11:12:54 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 09:54:46 by jergashe         ###   ########.fr       */
+/*   Created: 2023/01/23 08:44:09 by jergashe          #+#    #+#             */
+/*   Updated: 2023/01/25 09:17:46 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../headers/lib_push_swap.h"
+#include "../../headers/lib_push_swap_checker.h"
 
-// void	print_stack(t_stack *stack, int incl_index)
-// {
-// 	if (stack == NULL)
-// 		return ;
-// 	ft_printf("STACK %d: ", stack->size);
-// 	if (stack->size == 0)
-// 		return ;
-// 	print_nodes(stack->head, incl_index);
-// }
+void	free_stack(t_stack *stack)
+{
+	t_node *current;
+	t_node *next;
+
+	current = stack->head;
+	while (current != NULL)
+	{
+		next = current->next;
+		free(current);
+		current = next;
+	}
+	free(stack);
+}
