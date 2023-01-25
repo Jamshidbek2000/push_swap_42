@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 07:52:59 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:07:04 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:18:52 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*current;
 
+	if (stack->size < 1)
+		return (0);
 	current = stack->head;
 	while (current->next)
 	{

@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:13:53 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 11:08:38 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:15:08 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,9 @@ void	exec_cmds(t_stack *stack_a, t_stack *stack_b)
 	char	*cmd;
 
 	cmd = get_next_line(0);
-	if (cmd == NULL)
-		return ;
-	while (cmd != NULL)
+
+	while (cmd != NULL && !(ft_strncmp(cmd, "\n", 1) == 0
+		&& ft_strlen(cmd) == 1))
 	{
 		exec_cmd(stack_a, stack_b, cmd);
 		free(cmd);
@@ -60,6 +60,7 @@ void	exec_cmds(t_stack *stack_a, t_stack *stack_b)
 	}
 	if (cmd != NULL)
 		free(cmd);
+	
 }
 
 int	main(int argc, char **argv)
@@ -76,18 +77,12 @@ int	main(int argc, char **argv)
 	array_check(array, size);
 	stack_a = get_stack_a(array, size);
 	stack_b = get_empty_stack();
-	
+
 	exec_cmds(stack_a, stack_b);
-	
 	if (is_sorted(stack_a) && stack_b->size == 0)
-	{
 		ft_printf("OK\n");
-	}
 	else
-	{
 		ft_printf("KO\n");
-	}
-	
 	free(array);
 	free_stack(stack_a);
 	free_stack(stack_b);

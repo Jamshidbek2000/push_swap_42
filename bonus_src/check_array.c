@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:39:05 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:05:04 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 16:01:53 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	array_is_sorted(long *array, int size) // if sorted you can end here
 		previous = array[index];
 		index++;
 	}
-	exit(0); // change
 	return (1);
 }
 
