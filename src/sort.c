@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 07:19:31 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 08:31:19 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 11:24:26 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,6 @@ void sort_for_3(t_stack *stack, char *msg)
 void	sort_for_7(t_stack *stack_a, t_stack *stack_b)
 {
 	t_node	*min_node;
-	int		opr_count;
 
 	if (stack_a == NULL || stack_b == NULL)
 		return ;

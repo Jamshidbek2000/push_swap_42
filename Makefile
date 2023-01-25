@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/25 11:21:26 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/25 11:22:43 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,8 +14,7 @@ NAME = push_swap
 BONUS_NAME = checker
 CC = cc
 RM = rm -rf
-CFLAGS = 
-# -Wall -Wextra -Werror
+CFLAGS = -Wall -Wextra -Werror
 LIBFT = libft_42/libft.a
 
 SRCS = src/push_swap.c	\
