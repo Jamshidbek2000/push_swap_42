@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:35:15 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/24 10:22:30 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 08:22:17 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	rotate_stack(t_stack *stack, char *msg)
 	if (stack->size == 2)
 	{
 		swap_stack(stack, msg);
-		ft_printf(msg);
 		return ;
 	}
 	node = pop_stack(stack); // size + 1

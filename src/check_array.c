@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 10:39:05 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 10:49:39 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 08:19:26 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ int	array_is_sorted(long *array, int size) // if sorted you can end here
 		previous = array[index];
 		index++;
 	}
-	ft_printf("ALREADY SORTED\n");
 	exit(0); // change
 	return (1);
 }
@@ -49,7 +48,6 @@ void	range_check(long *array, int size)
 		// printf("INDEX EXIT: %d\n", index);
 		if (array[index] < INT_MIN || array[index] > INT_MAX)
 		{
-			printf("EXIT(3)\n");
 			exit_with_msg(RANGE);
 		}
 		index++;
@@ -69,7 +67,6 @@ void	duplicate_check(long *array, int size)
 		{
 			if (array[i] == array[j])
 			{
-				printf("EXIT(4)\n");
 				exit_with_msg(DUPLICATE);
 			}
 			j++;

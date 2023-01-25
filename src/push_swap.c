@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:13:53 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/24 11:24:06 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/25 08:07:19 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,11 @@ int	main(int argc, char **argv)
 	stack_a = get_stack_a(array, size);
 	stack_b = get_empty_stack();
 
+	// print_stack(stack_a, 1);
+	// print_stack(stack_b, 1);
+	sort(stack_a, stack_b);
+	// print_stack(stack_a, 1);
+	// print_stack(stack_b, 1);
 	
 
 	free(array);
