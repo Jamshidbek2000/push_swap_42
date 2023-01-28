@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 08:38:00 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:39:20 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 11:28:46 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,16 +15,16 @@
 void	push_head(t_stack *stack, t_node *node)
 {
 	if (stack == NULL || node == NULL)
-		return;
-	if (stack->size == 0) // stack is empty
+		return ;
+	if (stack->size == 0)
 	{
 		stack->head = node;
 		stack->tail = node;
 		stack->size++;
 	}
-	else // stack isn't empty
+	else
 	{
-		node->next = stack->head; // should I use *(stack->head)?
+		node->next = stack->head;
 		stack->head = node;
 		stack->size++;
 	}
@@ -33,8 +33,8 @@ void	push_head(t_stack *stack, t_node *node)
 void	push_tail(t_stack *stack, t_node *node)
 {
 	if (stack == NULL || node == NULL)
-		return;
-	if (stack->size == 0) // stack is empty
+		return ;
+	if (stack->size == 0)
 	{
 		stack->head = node;
 		stack->tail = node;

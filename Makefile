@@ -6,7 +6,7 @@
 #    By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/01/21 08:06:06 by jergashe          #+#    #+#              #
-#    Updated: 2023/01/25 16:15:31 by jergashe         ###   ########.fr        #
+#    Updated: 2023/01/27 11:28:00 by jergashe         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,35 +18,38 @@ CFLAGS = -Wall -Wextra -Werror -g
 LIBFT = libft_42/libft.a
 
 SRCS = src/push_swap.c	\
-		src/parse.c	\
 		src/check_array.c	\
 		src/errors.c	\
 		src/init_stack.c	\
+		src/k_sort.c	\
 		src/node.c	\
-		src/utils.c	\
+		src/parse.c	\
 		src/sort_array.c	\
-		src/sort.c	\
+		src/sort_utils_2.c	\
 		src/sort_utils.c	\
-		src/stack_manipulation/push_stack.c	\
+		src/sort.c	\
+		src/utils.c	\
 		src/stack_manipulation/free_stack.c	\
-		src/stack_manipulation/swap_stack.c	\
-		src/stack_manipulation/rotate_stack.c	\
-		src/stack_manipulation/print_stack.c	\
 		src/stack_manipulation/pop_stack.c	\
+		src/stack_manipulation/print_stack.c	\
+		src/stack_manipulation/push_stack.c	\
+		src/stack_manipulation/rotate_stack.c	\
+		src/stack_manipulation/swap_stack.c	\
 		
 BONUS_SRCS = bonus_src/push_swap_checker.c	\
 		bonus_src/check_array.c	\
 		bonus_src/errors.c	\
+		bonus_src/exec_cmd.c	\
 		bonus_src/init_stack.c	\
 		bonus_src/node.c	\
 		bonus_src/parse.c	\
 		bonus_src/sort_array.c	\
 		bonus_src/sort_utils.c	\
-		bonus_src/stack_manipulation/push_stack.c	\
 		bonus_src/stack_manipulation/free_stack.c	\
-		bonus_src/stack_manipulation/swap_stack.c	\
-		bonus_src/stack_manipulation/rotate_stack.c	\
 		bonus_src/stack_manipulation/pop_stack.c	\
+		bonus_src/stack_manipulation/push_stack.c	\
+		bonus_src/stack_manipulation/rotate_stack.c	\
+		bonus_src/stack_manipulation/swap_stack.c	\
 
 OBJS = $(SRCS:.c=.o)
 

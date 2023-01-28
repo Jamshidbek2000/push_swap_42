@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:13:53 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 09:14:47 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:03:52 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,19 +19,15 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	argc_check(argc);
+	nb_of_agrs_check(argc);
 	size = get_num_of_ints(argc, argv);
 	array = get_long_arr_from_input(argc, argv);
-	
 	array_check(array, size);
 	stack_a = get_stack_a(array, size);
-	stack_b = get_empty_stack();
-	
-	sort(stack_a, stack_b);
-
 	free(array);
+	stack_b = get_empty_stack();
+	sort(stack_a, stack_b);
 	free_stack(stack_a);
 	free_stack(stack_b);
-	// system("leaks push_swap");
 	return (0);
 }

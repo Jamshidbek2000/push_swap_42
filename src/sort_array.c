@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 08:03:08 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 11:23:36 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:04:38 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,16 +19,16 @@ void	bubble_sort_array(long *array, int size)
 	int	tmp;
 
 	i = 0;
-	while (i < size - 1) 
+	while (i < size - 1)
 	{
 		j = 0;
-		while (j < size - i - 1) 
+		while (j < size - i - 1)
 		{
 			if (array[j] > array[j + 1])
 			{
 				tmp = array[j];
 				array[j] = array[j + 1];
-				array[j + 1] = tmp;	
+				array[j + 1] = tmp;
 			}
 			j++;
 		}

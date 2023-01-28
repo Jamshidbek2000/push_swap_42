@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:54:43 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/23 14:02:29 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:31:50 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,9 @@ t_node	*pop_stack(t_stack *stack)
 	if (stack == NULL)
 		return (NULL);
 	if (stack->size == 0)
-		return(NULL);
+		return (NULL);
 	node = stack->head;
-	if (stack->size != 1) // not only element in stack [] []
+	if (stack->size != 1)
 	{
 		stack->head = stack->head->next;
 		stack->size--;
@@ -47,7 +47,6 @@ t_node	*pop_last(t_stack *stack)
 		return (pop_stack(stack));
 	curr_node = stack->head;
 	last_node = stack->tail;
-	
 	while (curr_node->next != last_node)
 	{
 		curr_node = curr_node->next;

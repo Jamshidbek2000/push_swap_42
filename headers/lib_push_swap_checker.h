@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/25 08:54:44 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:45:40 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/28 08:51:41 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,9 @@
 # define NON_NUMERIC 1
 # define DUPLICATE 2
 # define RANGE 3
+# define CMD 4
+# define MALLOC 5
+# define ARGC 6
 
 typedef struct s_node
 {
@@ -37,18 +40,19 @@ typedef struct s_stack
 	int		size;
 }t_stack;
 
-
-// push_swap.c
-
 // check_array.c
-void	argc_check(int argc);
+int		nb_of_agrs_check(int argc);
 void	array_check(long *array, int size);
 
 // errors.c
 void	exit_with_msg(int error_index);
 
+// exec_cmd.c
+int		exec_cmd(t_stack *stack_a, t_stack *stack_b, char *cmd);
+int		exec_cmds(t_stack *stack_a, t_stack *stack_b);
+
 // init_stack.c
-t_stack	*get_empty_stack();
+t_stack	*get_empty_stack(void);
 t_stack	*get_stack_a(long *array, int size);
 
 // node
@@ -65,17 +69,12 @@ void	bubble_sort_array(long *array, int size);
 // sort_utils.c
 int		is_sorted(t_stack *stack);
 
-
-
 // free_stack.c
 void	free_stack(t_stack *stack);
 
 // pop_stack.c
 t_node	*pop_stack(t_stack *stack);
 t_node	*pop_last(t_stack *stack);
-
-// print_stack.c
-// void	print_stack(t_stack *stack, int incl_index);
 
 // push_stack.c
 void	push_to_from(t_stack *stack_1, t_stack *stack_2);
@@ -91,6 +90,5 @@ void	reverse_rotate_2_stacks(t_stack *stack_a, t_stack *stack_b);
 // swap_stack.c
 void	swap_stack(t_stack *stack);
 void	swap_2_stacks(t_stack *stack_a, t_stack *stack_b);
-
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:18:27 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:13:32 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:53:50 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,6 @@ t_node	*get_new_node_with_num(int num)
 	node->next = NULL;
 	return (node);
 }
-
 // void	add_node_tail(t_node *head, t_node *node)
 // {
 // 	t_node	*tmp;

@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 09:51:39 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/24 10:22:44 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/26 07:15:40 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,4 +30,14 @@ void	swap_stack(t_stack *stack, char *msg)
 		stack->tail = stack->head->next;
 	ft_printf("s");
 	ft_printf(msg);
+}
+
+void	swap_2_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a == NULL || stack_b == NULL)
+		return ;
+	if (stack_a->size < 2 || stack_b->size < 2)
+		return ;
+	swap_stack(stack_a, "a\n");
+	swap_stack(stack_b, "b\n");
 }

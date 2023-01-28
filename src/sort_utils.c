@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 07:52:59 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/24 09:08:37 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:06:05 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,10 @@ int	get_min_index(t_stack *stack)
 	t_node	*current;
 	int		min_index;
 
+	if (stack == NULL)
+		return (-1);
+	if (stack->head == NULL)
+		return (-1);
 	current = stack->head;
 	min_index = current->index_sorted;
 	while (current->next)
@@ -63,6 +67,10 @@ int	is_sorted(t_stack *stack)
 {
 	t_node	*current;
 
+	if (stack == NULL)
+		return (-1);
+	if (stack->head == NULL)
+		return (-1);
 	current = stack->head;
 	while (current->next)
 	{

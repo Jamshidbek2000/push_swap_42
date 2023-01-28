@@ -6,62 +6,11 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 15:13:53 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 16:15:08 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/28 08:42:21 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap_checker.h"
-
-int	exec_cmd(t_stack *stack_a, t_stack *stack_b, char *cmd)
-{
-	int	cmd_len;
-
-	cmd_len = ft_strlen(cmd);
-	if (ft_strncmp(cmd, "pa\n", 3) == 0 && cmd_len == 3)
-		push_to_from(stack_a, stack_b);
-	else if (ft_strncmp(cmd, "pb\n", 3) == 0 && cmd_len == 3)
-		push_to_from(stack_b, stack_a);
-	else if (ft_strncmp(cmd, "sa\n", 3) == 0 && cmd_len == 3)
-		swap_stack(stack_a);
-	else if (ft_strncmp(cmd, "sb\n", 3) == 0 && cmd_len == 3)
-		swap_stack(stack_b);
-	else if (ft_strncmp(cmd, "ss\n", 3) == 0 && cmd_len == 3)
-		swap_2_stacks(stack_a, stack_b);
-	else if (ft_strncmp(cmd, "ra\n", 3) == 0 && cmd_len == 3)
-		rotate_stack(stack_a);
-	else if (ft_strncmp(cmd, "rb\n", 3) == 0 && cmd_len == 3)
-		rotate_stack(stack_b);
-	else if (ft_strncmp(cmd, "rr\n", 3) == 0 && cmd_len == 3)
-		rotate_2_stacks(stack_a, stack_b);
-	else if (ft_strncmp(cmd, "rra\n", 4) == 0 && cmd_len == 4)
-		reverse_rotate_stack(stack_a);
-	else if (ft_strncmp(cmd, "rrb\n", 4) == 0 && cmd_len == 4)
-		reverse_rotate_stack(stack_b);
-	else if (ft_strncmp(cmd, "rrr\n", 4) == 0 && cmd_len == 4)
-		reverse_rotate_2_stacks(stack_a, stack_b);
-	else
-		return (0);
-	return (1);
-}
-
-void	exec_cmds(t_stack *stack_a, t_stack *stack_b)
-{
-	char	*cmd;
-
-	cmd = get_next_line(0);
-
-	while (cmd != NULL && !(ft_strncmp(cmd, "\n", 1) == 0
-		&& ft_strlen(cmd) == 1))
-	{
-		exec_cmd(stack_a, stack_b, cmd);
-		free(cmd);
-		cmd = NULL;
-		cmd = get_next_line(0);
-	}
-	if (cmd != NULL)
-		free(cmd);
-	
-}
 
 int	main(int argc, char **argv)
 {
@@ -70,22 +19,23 @@ int	main(int argc, char **argv)
 	t_stack	*stack_a;
 	t_stack	*stack_b;
 
-	argc_check(argc);
+	nb_of_agrs_check(argc);
 	size = get_num_of_ints(argc, argv);
 	array = get_long_arr_from_input(argc, argv);
-	
 	array_check(array, size);
 	stack_a = get_stack_a(array, size);
-	stack_b = get_empty_stack();
-
-	exec_cmds(stack_a, stack_b);
-	if (is_sorted(stack_a) && stack_b->size == 0)
-		ft_printf("OK\n");
-	else
-		ft_printf("KO\n");
 	free(array);
+	stack_b = get_empty_stack();
+	if (exec_cmds(stack_a, stack_b) == -1)
+		ft_putstr_fd("Error\n", 2);
+	else
+	{
+		if (is_sorted(stack_a) && stack_b->size == 0)
+			ft_printf("OK\n");
+		else
+			ft_printf("KO\n");
+	}
 	free_stack(stack_a);
 	free_stack(stack_b);
-	// system("leaks checker");
 	return (0);
 }

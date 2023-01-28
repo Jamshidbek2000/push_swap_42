@@ -6,7 +6,7 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:35:15 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 08:22:17 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:35:05 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	rotate_stack(t_stack *stack, char *msg)
 		swap_stack(stack, msg);
 		return ;
 	}
-	node = pop_stack(stack); // size + 1
+	node = pop_stack(stack);
 	if (node == NULL)
 		return ;
 	push_tail(stack, node);
@@ -43,4 +43,24 @@ void	reverse_rotate_stack(t_stack *stack, char *msg)
 	push_head(stack, last_node);
 	ft_printf("rr");
 	ft_printf(msg);
+}
+
+void	rotate_2_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a == NULL || stack_b == NULL)
+		return ;
+	if (stack_a->size < 2 || stack_b->size < 2)
+		return ;
+	rotate_stack(stack_a, "a\n");
+	rotate_stack(stack_b, "b\n");
+}
+
+void	reverse_rotate_2_stacks(t_stack *stack_a, t_stack *stack_b)
+{
+	if (stack_a == NULL || stack_b == NULL)
+		return ;
+	if (stack_a->size < 2 || stack_b->size < 2)
+		return ;
+	reverse_rotate_stack(stack_a, "a\n");
+	reverse_rotate_stack(stack_b, "b\n");
 }

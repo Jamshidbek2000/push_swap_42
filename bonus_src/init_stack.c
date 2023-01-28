@@ -6,13 +6,13 @@
 /*   By: jergashe <jergashe@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 14:24:41 by jergashe          #+#    #+#             */
-/*   Updated: 2023/01/25 10:05:04 by jergashe         ###   ########.fr       */
+/*   Updated: 2023/01/27 08:53:50 by jergashe         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../headers/lib_push_swap_checker.h"
 
-t_stack	*get_empty_stack()
+t_stack	*get_empty_stack(void)
 {
 	t_stack	*stack;
 
@@ -37,11 +37,15 @@ t_stack	*array_to_stack(long *array, int size)
 	index = 0;
 	stack_a->size = size;
 	stack_a->head = get_new_node_with_num(array[index++]);
+	if (stack_a->head == NULL)
+		return (free(stack_a), NULL);
 	tmp = stack_a->head;
 	while (index < size)
 	{
-		tmp->next = get_new_node_with_num(array[index++]); // if error free
-		tmp = tmp->next; // every node from head... 
+		tmp->next = get_new_node_with_num(array[index++]);
+		if (tmp->next == NULL)
+			return (free_stack(stack_a), NULL);
+		tmp = tmp->next;
 	}
 	stack_a->tail = tmp;
 	return (stack_a);
@@ -54,7 +58,7 @@ void	set_stack_indeces(t_stack *stack_a, long *array)
 
 	index = 0;
 	tmp = stack_a->head;
-	while (index < stack_a->size) // OR WHILE TMP->NEXT != NULL
+	while (index < stack_a->size)
 	{
 		tmp->index_sorted = get_index(array, stack_a->size, tmp->num);
 		tmp = tmp->next;
