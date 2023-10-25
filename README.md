@@ -13,3 +13,6 @@ The task is to sort numbers using 2 stacks. But, only with operations allowed on
 
 To check if the sequence will be sorted: (checker was made for Mac)
 1. ./push_swap "5 12 1 44 88 121 ..." | ./checker_Mac "5 12 1 44 88 121 ..." (it will output if it was sorted or not)
+
+## Visual review of algorithm used
+https://github.com/Jamshidbek2000/push_swap_42/assets/106934634/a94c3dd1-7c2a-40a9-baff-df7033870f59
